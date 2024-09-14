@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { CalculatorScreen } from './presentation/screens/calculatorScreen';
-
+import { styles } from "./config/themes/app-themes"
 
 import {
   StatusBar,
@@ -20,7 +20,7 @@ import {
 function App() {
 
   return (
-    <View >
+    <View style={styles.background}>
       <StatusBar
         barStyle={'light-content'}
         backgroundColor={'black'}
@@ -29,7 +29,6 @@ function App() {
     </View>
   );
 }
-
 
 
 export default App;
