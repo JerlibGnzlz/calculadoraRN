@@ -9,6 +9,7 @@ interface Props {
   color?: string,
   anchoZero?: boolean,
   textBlack?: boolean
+  onPress: () => void
 
 }
 
@@ -17,16 +18,19 @@ export default function CalBotones({
   color = colors.darkGray,
   anchoZero = false,
   textBlack = false,
+  onPress,
 }: Props) {
 
   return (
     <>
-      <Pressable style={({ pressed }) => ({
-        ...styles.button,
-        backgroundColor: color,
-        width: (anchoZero) ? 180 : 80,
-        opacity: (pressed) ? 0.8 : 1,
-      })} >
+      <Pressable
+        onPress={() => onPress()}
+        style={({ pressed }) => ({
+          ...styles.button,
+          backgroundColor: color,
+          width: (anchoZero) ? 180 : 80,
+          opacity: (pressed) ? 0.8 : 1,
+        })} >
         <Text style={{
           ...styles.btnText,
           color: textBlack ? 'black' : 'white',

@@ -15,37 +15,37 @@ export const CalculatorScreen = () => {
             </View>
 
             <View style={styles.row}>
-                <CalBotones textBlack label="C" color={colors.lightGray} />
-                <CalBotones textBlack label="+/-" color={colors.lightGray} />
-                <CalBotones textBlack label="del" color={colors.lightGray} />
-                <CalBotones textBlack label="/" color={colors.orange} />
+                <CalBotones onPress={() => console.log('C')} textBlack label="C" color={colors.lightGray} />
+                <CalBotones onPress={() => console.log('+/-')} textBlack label="+/-" color={colors.lightGray} />
+                <CalBotones onPress={() => console.log('del')} textBlack label="del" color={colors.lightGray} />
+                <CalBotones onPress={() => console.log('/')} label="/" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="7" color={colors.darkGray} />
-                <CalBotones label="8" color={colors.darkGray} />
-                <CalBotones label="9" color={colors.darkGray} />
-                <CalBotones label="x" color={colors.orange} />
+                <CalBotones onPress={() => console.log('7')} label="7" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('8')} label="8" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('9')} label="9" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('x')} label="x" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="4" color={colors.darkGray} />
-                <CalBotones label="5" color={colors.darkGray} />
-                <CalBotones label="6" color={colors.darkGray} />
-                <CalBotones label="-" color={colors.orange} />
+                <CalBotones onPress={() => console.log('4')} label="4" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('5')} label="5" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('6')} label="6" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('-')} label="-" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="1" color={colors.darkGray} />
-                <CalBotones label="2" color={colors.darkGray} />
-                <CalBotones label="3" color={colors.darkGray} />
-                <CalBotones label="+" color={colors.orange} />
+                <CalBotones onPress={() => console.log('1')} label="1" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('2')} label="2" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('3')} label="3" color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('+')} label="+" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="0" color={colors.darkGray} anchoZero />
-                <CalBotones label="." color={colors.darkGray} />
-                <CalBotones label="=" color={colors.orange} />
+                <CalBotones onPress={() => console.log('0')} label="0" color={colors.darkGray} anchoZero />
+                <CalBotones onPress={() => console.log('.')} label="." color={colors.darkGray} />
+                <CalBotones onPress={() => console.log('=')} label="=" color={colors.orange} />
             </View>
 
         </View >
