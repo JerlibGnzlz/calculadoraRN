@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 
-import { Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { styles } from '../../config/themes/app-themes';
 
 export const CalculatorScreen = () => {
@@ -12,6 +12,28 @@ export const CalculatorScreen = () => {
                 <Text style={styles.mainResult} >1500</Text>
                 <Text style={styles.subResult}>12</Text>
             </View>
+
+            <View style={styles.row}>
+
+                <Pressable style={styles.button} >
+                    <Text style={styles.btnText}>1</Text>
+                </Pressable>
+
+                <Pressable style={styles.button} >
+                    <Text style={styles.btnText}>1</Text>
+                </Pressable>
+
+                <Pressable style={styles.button} >
+                    <Text style={styles.btnText}>1</Text>
+                </Pressable>
+
+                <Pressable style={styles.button} >
+                    <Text style={styles.btnText}>1</Text>
+                </Pressable>
+
+            </View>
+
+
         </View >
     );
 };
