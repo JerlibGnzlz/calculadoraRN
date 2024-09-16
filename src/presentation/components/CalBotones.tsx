@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { Pressable, Text } from 'react-native';
 import { colors, styles } from '../../config/themes/app-themes';
@@ -5,23 +6,33 @@ import { colors, styles } from '../../config/themes/app-themes';
 
 interface Props {
   label: string,
-  color?: string
+  color?: string,
+  anchoZero?: boolean,
+  textBlack?: boolean
+
 }
 
 export default function CalBotones({
   label,
   color = colors.darkGray,
+  anchoZero = false,
+  textBlack = false,
 }: Props) {
+
   return (
     <>
       <Pressable style={({ pressed }) => ({
         ...styles.button,
         backgroundColor: color,
+        width: (anchoZero) ? 180 : 80,
         opacity: (pressed) ? 0.8 : 1,
       })} >
-        <Text style={styles.btnText}> {label} </Text>
-      </Pressable>
+        <Text style={{
+          ...styles.btnText,
+          color: textBlack ? 'black' : 'white',
+        }}> {label} </Text>
+      </Pressable >
     </>
-  )
+  );
 }
 

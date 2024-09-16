@@ -15,10 +15,10 @@ export const CalculatorScreen = () => {
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="C" color={colors.lightGray} />
-                <CalBotones label="+/-" color={colors.lightGray} />
-                <CalBotones label="del" color={colors.lightGray} />
-                <CalBotones label="/" color={colors.orange} />
+                <CalBotones textBlack label="C" color={colors.lightGray} />
+                <CalBotones textBlack label="+/-" color={colors.lightGray} />
+                <CalBotones textBlack label="del" color={colors.lightGray} />
+                <CalBotones textBlack label="/" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
@@ -43,9 +43,9 @@ export const CalculatorScreen = () => {
             </View>
 
             <View style={styles.row}>
-                <CalBotones label="0" color={colors.darkGray} />
+                <CalBotones label="0" color={colors.darkGray} anchoZero />
                 <CalBotones label="." color={colors.darkGray} />
-                <CalBotones label="+" color={colors.orange} />
+                <CalBotones label="=" color={colors.orange} />
             </View>
 
         </View >

@@ -11,6 +11,8 @@ export const colors = {
 };
 
 
+
+
 export const styles = StyleSheet.create({
     background: {
         flex: 1,
@@ -51,6 +53,8 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         marginHorizontal: 5,
     },
+
+
 
     btnText: {
         textAlign: 'center',
