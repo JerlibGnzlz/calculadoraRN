@@ -1,8 +1,8 @@
 import { StyleSheet } from 'react-native';
 
-export const color = {
+export const colors = {
     darkGray: '#2D2D2D',
-    lightGray: '9B9B9B',
+    lightGray: '#9B9B9B',
     orange: '#ff9427',
 
     textPramary: 'white',
@@ -14,7 +14,7 @@ export const color = {
 export const styles = StyleSheet.create({
     background: {
         flex: 1,
-        backgroundColor: color.background,
+        backgroundColor: colors.background,
     },
 
     containerCalculadora: {
@@ -23,14 +23,14 @@ export const styles = StyleSheet.create({
         justifyContent: 'flex-end',
     },
     mainResult: {
-        color: color.textPramary,
+        color: colors.textPramary,
         fontSize: 70,
         textAlign: 'right',
         marginBottom: 10,
         fontWeight: '400',
     },
     subResult: {
-        color: color.textSecondary,
+        color: colors.textSecondary,
         fontSize: 40,
         textAlign: 'right',
     },
@@ -39,16 +39,17 @@ export const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        marginVertical: 10,
     },
 
     button: {
         height: 80,
         width: 80,
-        backgroundColor: color.darkGray,
+        backgroundColor: colors.darkGray,
         borderRadius: 50,
         justifyContent: 'center',
-        marginHorizontal: 5
+        marginHorizontal: 5,
     },
 
     btnText: {
