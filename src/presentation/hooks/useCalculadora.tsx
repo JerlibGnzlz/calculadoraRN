@@ -7,9 +7,9 @@ const useCalculadora = () => {
     const buildNumber = (numeroString: string) => {
 
         // PUNTO DECIMAL
-        if (numero.includes('.') && numeroString === '.') return;
+        if (numero.includes('.') && numeroString === '.') { return; }
 
-        if (numero.startsWith('.') || numero.startsWith('-0')) {
+        if (numero.startsWith('0') || numero.startsWith('-0')) {
 
             if (numeroString === '.') {
                 return setNumero(numero + numeroString);
