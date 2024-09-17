@@ -14,11 +14,25 @@ const useCalculadora = () => {
             if (numeroString === '.') {
                 return setNumero(numero + numeroString);
             }
-        }
 
+            if (numeroString === '0' && numero.includes('.')) {
+                return setNumero(numero + numeroString);
+            }
+
+
+            if (numeroString !== '0' && !numero.includes('.')) {
+                return setNumero(numeroString);
+            }
+
+            if (numeroString === '0' && !numero.includes('.')) {
+                return;
+            }
+            return setNumero(numero + numeroString);
+        }
 
         setNumero(numero + numeroString);
     };
+
 
     return {
 
@@ -30,7 +44,7 @@ const useCalculadora = () => {
         // Metodos
         buildNumber,
 
-    }
+    };
 };
 
 export default useCalculadora;
