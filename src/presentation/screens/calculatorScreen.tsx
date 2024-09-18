@@ -8,7 +8,7 @@ import useCalculadora from '../hooks/useCalculadora';
 
 export const CalculatorScreen = () => {
 
-    const { numero, buildNumber } = useCalculadora();
+    const { numero, buildNumber, clean, deleteOperation, toggleSign } = useCalculadora();
 
 
     return (
@@ -23,9 +23,9 @@ export const CalculatorScreen = () => {
             </View>
 
             <View style={styles.row}>
-                <CalBotones onPress={() => console.log('C')} textBlack label="C" color={colors.lightGray} />
-                <CalBotones onPress={() => console.log('+/-')} textBlack label="+/-" color={colors.lightGray} />
-                <CalBotones onPress={() => console.log('del')} textBlack label="del" color={colors.lightGray} />
+                <CalBotones onPress={() => clean()} textBlack label="C" color={colors.lightGray} />
+                <CalBotones onPress={() => toggleSign()} textBlack label="+/-" color={colors.lightGray} />
+                <CalBotones onPress={() => deleteOperation()} textBlack label="del" color={colors.lightGray} />
                 <CalBotones onPress={() => console.log('/')} label="/" color={colors.orange} />
             </View>
 

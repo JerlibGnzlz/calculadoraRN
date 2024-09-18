@@ -4,6 +4,32 @@ const useCalculadora = () => {
 
     const [numero, setNumero] = useState('0');
 
+    const clean = () => {
+        return setNumero('0');
+    };
+
+
+    const deleteOperation = () => {
+        let valorActual = '-';
+        let NumeroTemporal = numero.substring(1)
+
+        if (NumeroTemporal.length > 1) {
+            return setNumero(valorActual + NumeroTemporal.slice(0, -1))
+        }
+        setNumero('0')
+    };
+
+    const toggleSign = () => {
+        if (numero.includes('-')) {
+            if (numero === '-0') {
+                return setNumero('0');
+            }
+            return setNumero(numero.replace('-', ' '));
+        }
+        setNumero('-' + numero);
+
+    };
+
     const buildNumber = (numeroString: string) => {
 
         // PUNTO DECIMAL
@@ -43,6 +69,9 @@ const useCalculadora = () => {
 
         // Metodos
         buildNumber,
+        clean,
+        deleteOperation,
+        toggleSign,
 
     };
 };
