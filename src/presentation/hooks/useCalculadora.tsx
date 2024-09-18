@@ -17,7 +17,8 @@ const useCalculadora = () => {
     const lastOperation = useRef<Operador>();
 
     const clean = () => {
-        return setNumero('0');
+        setNumero('0')
+        setPrevioNmero('0')
     };
 
 
@@ -108,6 +109,7 @@ const useCalculadora = () => {
 
         // Propiedades
         numero,
+        previoNumero,
 
 
 

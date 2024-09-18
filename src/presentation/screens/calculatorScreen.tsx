@@ -18,7 +18,7 @@ export const CalculatorScreen = () => {
         divideOperacion,
         multyOperacion,
         susbstOperacion,
-        setPrevioNmero
+        previoNumero
     } = useCalculadora();
 
 
@@ -33,7 +33,8 @@ export const CalculatorScreen = () => {
                 <Text
                     adjustsFontSizeToFit
                     numberOfLines={1}
-                    style={styles.subResult}>{setPrevioNmero}</Text>
+                    style={styles.subResult}>
+                    {(previoNumero === '0') ? " " : previoNumero}</Text>
             </View>
 
             <View style={styles.row}>
