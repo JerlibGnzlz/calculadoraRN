@@ -8,7 +8,18 @@ import useCalculadora from '../hooks/useCalculadora';
 
 export const CalculatorScreen = () => {
 
-    const { numero, buildNumber, clean, deleteOperation, toggleSign } = useCalculadora();
+    const {
+        numero,
+        buildNumber,
+        clean,
+        deleteOperation,
+        toggleSign,
+        addOperacion,
+        divideOperacion,
+        multyOperacion,
+        susbstOperacion,
+        setPrevioNmero
+    } = useCalculadora();
 
 
     return (
@@ -19,35 +30,38 @@ export const CalculatorScreen = () => {
                     adjustsFontSizeToFit
                     numberOfLines={1}
                     style={styles.mainResult} >{numero}</Text>
-                <Text style={styles.subResult}>12</Text>
+                <Text
+                    adjustsFontSizeToFit
+                    numberOfLines={1}
+                    style={styles.subResult}>{setPrevioNmero}</Text>
             </View>
 
             <View style={styles.row}>
                 <CalBotones onPress={() => clean()} textBlack label="C" color={colors.lightGray} />
                 <CalBotones onPress={() => toggleSign()} textBlack label="+/-" color={colors.lightGray} />
                 <CalBotones onPress={() => deleteOperation()} textBlack label="del" color={colors.lightGray} />
-                <CalBotones onPress={() => console.log('/')} label="/" color={colors.orange} />
+                <CalBotones onPress={() => divideOperacion()} label="/" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
                 <CalBotones onPress={() => buildNumber('7')} label="7" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('8')} label="8" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('9')} label="9" color={colors.darkGray} />
-                <CalBotones onPress={() => console.log('x')} label="x" color={colors.orange} />
+                <CalBotones onPress={multyOperacion} label="x" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
                 <CalBotones onPress={() => buildNumber('4')} label="4" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('5')} label="5" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('6')} label="6" color={colors.darkGray} />
-                <CalBotones onPress={() => console.log('-')} label="-" color={colors.orange} />
+                <CalBotones onPress={() => susbstOperacion()} label="-" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
                 <CalBotones onPress={() => buildNumber('1')} label="1" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('2')} label="2" color={colors.darkGray} />
                 <CalBotones onPress={() => buildNumber('3')} label="3" color={colors.darkGray} />
-                <CalBotones onPress={() => console.log('+')} label="+" color={colors.orange} />
+                <CalBotones onPress={() => addOperacion()} label="+" color={colors.orange} />
             </View>
 
             <View style={styles.row}>
