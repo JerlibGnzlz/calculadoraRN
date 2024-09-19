@@ -32,7 +32,14 @@ const useCalculadora = () => {
         } else {
             setFormula(numero);
         }
+
     }, [numero]);
+
+
+    useEffect(() => {
+        const subResult = calcutateSubResult()
+        setPrevioNmero(`${subResult}`);
+    }, [formula]);
 
     const deleteOperation = () => {
         let valorActual = '-';
@@ -87,7 +94,7 @@ const useCalculadora = () => {
 
 
     const setLastNumbre = () => {
-
+        calcutateSubResult()
         if (numero.endsWith('.')) {
             setPrevioNmero(numero.slice(0, -1));
         } else {
