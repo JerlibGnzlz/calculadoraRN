@@ -20,6 +20,7 @@ export const CalculatorScreen = () => {
         susbstOperacion,
         previoNumero,
         calcularResultado,
+        formula,
     } = useCalculadora();
 
 
@@ -30,7 +31,7 @@ export const CalculatorScreen = () => {
                 <Text
                     adjustsFontSizeToFit
                     numberOfLines={1}
-                    style={styles.mainResult} >{numero}</Text>
+                    style={styles.mainResult} >{formula}</Text>
                 <Text
                     adjustsFontSizeToFit
                     numberOfLines={1}

@@ -1,16 +1,17 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 enum Operador {
-    add,
-    subst,
-    multiply,
-    divide
+    add = '+',
+    subst = '-',
+    multiply = '*',
+    divide = '/'
 }
 
 
 const useCalculadora = () => {
 
 
+    const [formula, setFormula] = useState('');
     const [numero, setNumero] = useState('0');
     const [previoNumero, setPrevioNmero] = useState('0');
 
@@ -19,8 +20,19 @@ const useCalculadora = () => {
     const clean = () => {
         setNumero('0');
         setPrevioNmero('0');
+        lastOperation.current = undefined;
+        setFormula('');
     };
 
+
+    useEffect(() => {
+        if (lastOperation.current) {
+            const firstFormulationPart = formula.split(' ').at(0);
+            setFormula(`${firstFormulationPart} ${lastOperation.current} ${numero}`)
+        } else {
+            setFormula(numero);
+        }
+    }, [numero]);
 
     const deleteOperation = () => {
         let valorActual = '-';
@@ -140,6 +152,7 @@ const useCalculadora = () => {
         // Propiedades
         numero,
         previoNumero,
+        formula,
 
 
 
