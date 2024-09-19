@@ -117,35 +117,42 @@ const useCalculadora = () => {
     };
 
 
-    const calcularResultado = () => {
-        const number1 = Number(numero);
-        const number2 = Number(previoNumero);
+    const calcularResultado = (): number => {
 
-        switch (lastOperation.current) {
+        const result = calcutateSubResult()
+        setFormula(`${result}`)
+        lastOperation.current = undefined
+        setPrevioNmero('0');
+    };
+
+    const calcutateSubResult = () => {
+        const [firstNumero, operador, secordNumero] = formula.split(' ');
+
+        const number1 = Number(firstNumero);
+        const number2 = Number(secordNumero);
+
+        if (isNaN(number2)) { return number1; }
+
+
+        switch (operador) {
 
             case Operador.add:
-                setNumero(`${number1 + number2}`);
-                break;
+                return number1 + number2;
 
             case Operador.subst:
-                setNumero(`${number2 - number1}`);
-                break;
+                return number1 - number2;
 
             case Operador.multiply:
-                setNumero(`${number1 * number2}`);
-                break;
+                return number1 * number2;
 
             case Operador.divide:
-                setNumero(`${number2 / number1}`);
-                break;
+                return number1 / number2;
 
 
             default:
                 throw new Error('Operacion no valida');
         }
-        setPrevioNmero('0');
-    };
-
+    }
 
     return {
 
