@@ -35,7 +35,7 @@ export const CalculatorScreen = () => {
                     adjustsFontSizeToFit
                     numberOfLines={1}
                     style={styles.subResult}>
-                    {(previoNumero === '0') ? " " : previoNumero}</Text>
+                    {(previoNumero === '0') ? ' ' : previoNumero}</Text>
             </View>
 
             <View style={styles.row}>

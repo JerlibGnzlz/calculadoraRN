@@ -17,14 +17,14 @@ const useCalculadora = () => {
     const lastOperation = useRef<Operador>();
 
     const clean = () => {
-        setNumero('0')
-        setPrevioNmero('0')
+        setNumero('0');
+        setPrevioNmero('0');
     };
 
 
     const deleteOperation = () => {
         let valorActual = '-';
-        let NumeroTemporal = numero.substring(1)
+        let NumeroTemporal = numero.substring(1);
 
         if (NumeroTemporal.length > 1) {
             return setNumero(valorActual + NumeroTemporal.slice(0, -1));
@@ -82,7 +82,7 @@ const useCalculadora = () => {
             setPrevioNmero(numero);
         }
         setNumero('0');
-    }
+    };
 
 
     const addOperacion = () => {
@@ -106,19 +106,33 @@ const useCalculadora = () => {
 
 
     const calcularResultado = () => {
-        const number1 = Number(numero)
-        const number2 = Number(previoNumero)
+        const number1 = Number(numero);
+        const number2 = Number(previoNumero);
 
         switch (lastOperation.current) {
+
             case Operador.add:
-                setNumero(`${number1 + number2}`)
+                setNumero(`${number1 + number2}`);
                 break;
 
+            case Operador.subst:
+                setNumero(`${number2 - number1}`);
+                break;
+
+            case Operador.multiply:
+                setNumero(`${number1 * number2}`);
+                break;
+
+            case Operador.divide:
+                setNumero(`${number2 / number1}`);
+                break;
+
+
             default:
-                throw new Error("Operacion no valida");
+                throw new Error('Operacion no valida');
         }
-        setPrevioNmero('0')
-    }
+        setPrevioNmero('0');
+    };
 
 
     return {
