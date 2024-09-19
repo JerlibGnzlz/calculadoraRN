@@ -18,7 +18,8 @@ export const CalculatorScreen = () => {
         divideOperacion,
         multyOperacion,
         susbstOperacion,
-        previoNumero
+        previoNumero,
+        calcularResultado,
     } = useCalculadora();
 
 
@@ -68,7 +69,7 @@ export const CalculatorScreen = () => {
             <View style={styles.row}>
                 <CalBotones onPress={() => buildNumber('0')} label="0" color={colors.darkGray} anchoZero />
                 <CalBotones onPress={() => buildNumber('.')} label="." color={colors.darkGray} />
-                <CalBotones onPress={() => console.log('=')} label="=" color={colors.orange} />
+                <CalBotones onPress={calcularResultado} label="=" color={colors.orange} />
             </View>
 
         </View >

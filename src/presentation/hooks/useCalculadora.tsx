@@ -105,6 +105,22 @@ const useCalculadora = () => {
     };
 
 
+    const calcularResultado = () => {
+        const number1 = Number(numero)
+        const number2 = Number(previoNumero)
+
+        switch (lastOperation.current) {
+            case Operador.add:
+                setNumero(`${number1 + number2}`)
+                break;
+
+            default:
+                throw new Error("Operacion no valida");
+        }
+        setPrevioNmero('0')
+    }
+
+
     return {
 
         // Propiedades
@@ -122,6 +138,7 @@ const useCalculadora = () => {
         divideOperacion,
         multyOperacion,
         susbstOperacion,
+        calcularResultado,
     };
 };
 
